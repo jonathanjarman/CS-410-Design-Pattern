@@ -1,9 +1,9 @@
-// Vehicle interface
+// Vehicle interface (Product) which defines the interface for objects that can be created by the factory method
 interface Vehicle {
     void drive();
 }
 
-// Car class (ConcreteProduct)
+// Car class (ConcreteProduct) which implements Vehicle interface for car objects
 class Car implements Vehicle {
     @Override
     public void drive() {
@@ -11,7 +11,7 @@ class Car implements Vehicle {
     }
 }
 
-// Motorcycle class (ConcreteProduct)
+// Motorcycle class (ConcreteProduct) which implements Vehicle interface for motorcycle objects
 class Motorcycle implements Vehicle {
     @Override
     public void drive() {
@@ -19,29 +19,29 @@ class Motorcycle implements Vehicle {
     }
 }
 
-// VehicleFactory abstract class
+// VehicleFactory abstract class, which creates Vehicle objects
 abstract class VehicleFactory {
     abstract Vehicle createVehicle();
 
     void useVehicle() { // Factory method
         Vehicle vehicle = createVehicle();
-        vehicle.drive();
+        vehicle.drive();// Use the vehicle
     }
 }
 
-// CarFactory class (ConcreteCreator)
+// CarFactory class (ConcreteCreator) which creates Car objects
 class CarFactory extends VehicleFactory {
     @Override 
     Vehicle createVehicle() {
-        return new Car();
+        return new Car(); // Return a Car object
     }
 }
 
-// MotorcycleFactory class (ConcreteCreator)
+// MotorcycleFactory class (ConcreteCreator) which creates Motorcycle objects
 class MotorcycleFactory extends VehicleFactory {
     @Override
     Vehicle createVehicle() {
-        return new Motorcycle();
+        return new Motorcycle(); // Return a Motorcycle object
     }
 }
 
