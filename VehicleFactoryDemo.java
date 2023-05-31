@@ -1,3 +1,7 @@
+//Author: Jonathan Jarman
+//Date: 5/20/2023
+//Assignment: Design Pattern Demonstration - Factory Method
+
 // Vehicle interface (Product) which defines the interface for objects that can be created by the factory method
 interface Vehicle {
     void drive();
